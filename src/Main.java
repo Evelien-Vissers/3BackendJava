@@ -31,7 +31,7 @@ public class Main {
             System.out.print("\nTranslated array: ");
             for (String translatedStr : translated) { //NB: 'str' aangepast naar 'trnaslatedStr', omdat de variabele 'str' als gedefnieert is in deze scope!
                 //In Java kan je geen variabele met dezelfde naam opnieuw defnieren binnen dezelfde scope, daarom deze naam aangepast.
-                System.out.print(str + " ");
+                System.out.print(translatedStr + " ");
             }
         }
         //12. Maak in de main methode van de Main class een boolean variabele genaamd 'play' met de waarde 'true'.
@@ -63,20 +63,19 @@ public class Main {
                 //NB2: verwijderen van 'int' voor 'number' - want deze variabele is al gedeclareerd binnen dezelfde scope.
                 //15(ii). Vervolgens sla je het resultaat van 'scanner.nextLine(); toe op de volgende regel:
                 scanner.nextLine();
-            }
-            //15(ii)Check met een if-statement of
-            // (a) if: number < 10, dan sla je de waarde van 'translator.translate(number)' op in 'String result' en print je 'De vertaling van " + number + " is " + result;
-            if (number >= 0 && number <= 9) {
-                String result = translator.translate(number);
-                System.out.println("De vertaling van " + number + " is " + result);
+                //15(ii)Check met een if-statement of
+                // (a) if: number < 10, dan sla je de waarde van 'translator.translate(number)' op in 'String result' en print je 'De vertaling van " + number + " is " + result;
+                if (number >= 0 && number <= 9) {
+                    String result = translator.translate(number);
+                    System.out.println("De vertaling van " + number + " is " + result);
+                } else {
+                    // (b) else: anders dan print je 'ongeldig'
+                    System.out.println(ongeldig);
+                }
             } else {
-                // (b) else: anders dan print je 'ongeldig'
+                //15(iii) else: als de input iets anders is dan 'x' of 'v', dan print je ongeldig.
                 System.out.println(ongeldig);
             }
-        } else{
-            //15(iii) else: als de input iets anders is dan 'x' of 'v', dan print je ongeldig.
-            System.out.println(ongeldig);
         }
     }
-}
 }
